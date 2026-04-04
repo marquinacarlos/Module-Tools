@@ -1,3 +1,7 @@
+# Type-guided refactorings
+# Changed preferred_operating_system (str) to preferred_operating_systems (List[str])
+# Changed == check to 'in' check in find_possible_laptops
+
 from dataclasses import dataclass
 from typing import List
 
