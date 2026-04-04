@@ -1,3 +1,7 @@
+# Generics
+# Fixed: added 'age' field to Person so child.age works
+# Used List["Person"] to tell mypy what type is in the list
+
 from dataclasses import dataclass
 from typing import List
 
@@ -18,3 +22,7 @@ def print_family_tree(person: Person) -> None:
         print(f"- {child.name} ({child.age})")
 
 print_family_tree(imran)
+# Output:
+# Imran
+# - Fatma (5)
+# - Aisha (3)
