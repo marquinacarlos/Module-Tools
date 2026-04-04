@@ -1,3 +1,7 @@
+# Inheritance
+# Child extends Parent, adding change_last_name and get_full_name
+# Parent does NOT have these methods — calling them on Parent causes errors
+
 class Parent:
     def __init__(self, first_name: str, last_name: str):
         self.first_name = first_name
@@ -21,6 +25,7 @@ class Child(Parent):
             suffix = f" (née {self.previous_last_names[0]})"
         return f"{self.first_name} {self.last_name}{suffix}"
 
+# Child has both Parent methods and its own methods
 person1 = Child("Elizaveta", "Alekseeva")
 print(person1.get_name())       # Elizaveta Alekseeva
 print(person1.get_full_name())  # Elizaveta Alekseeva
@@ -28,7 +33,8 @@ person1.change_last_name("Tyurina")
 print(person1.get_name())       # Elizaveta Tyurina
 print(person1.get_full_name())  # Elizaveta Tyurina (née Alekseeva)
 
+# Parent only has its own methods — no get_full_name or change_last_name
 person2 = Parent("Elizaveta", "Alekseeva")
 print(person2.get_name())       # Elizaveta Alekseeva
-# print(person2.get_full_name())  # ERROR: Parent doesn't have get_full_name
-# person2.change_last_name("Tyurina")  # ERROR: Parent doesn't have change_last_name
+# print(person2.get_full_name())    # AttributeError: 'Parent' has no attribute 'get_full_name'
+# person2.change_last_name("Tyurina")  # AttributeError: 'Parent' has no attribute 'change_last_name'
