@@ -1,3 +1,7 @@
+# Dataclasses
+# Using @dataclass to auto-generate constructor, __str__, and __eq__
+# Also uses date_of_birth and is_adult method
+
 from dataclasses import dataclass
 from datetime import date
 
@@ -15,5 +19,10 @@ class Person:
         return age >= 18
 
 imran = Person("Imran", date(2003, 5, 15), "Ubuntu")
-print(imran)
-print(imran.is_adult())
+imran2 = Person("Imran", date(2003, 5, 15), "Ubuntu")
+eliza = Person("Eliza", date(1991, 8, 20), "Arch Linux")
+
+print(imran)                # Person(name='Imran', date_of_birth=..., ...)
+print(imran == imran2)      # True — dataclass compares fields
+print(imran == eliza)       # False
+print(imran.is_adult())     # True
