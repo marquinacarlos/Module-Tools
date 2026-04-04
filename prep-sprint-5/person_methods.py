@@ -1,3 +1,7 @@
+# Methods
+# Changed Person to use date_of_birth instead of age
+# is_adult is now a method on the class instead of a free function
+
 from datetime import date
 
 class Person:
@@ -14,4 +18,9 @@ class Person:
         return age >= 18
 
 imran = Person("Imran", date(2003, 5, 15), "Ubuntu")
-print(imran.is_adult())
+eliza = Person("Eliza", date(1991, 8, 20), "Arch Linux")
+child = Person("Fatma", date(2015, 3, 10), "Ubuntu")
+
+print(f"{imran.name} is adult: {imran.is_adult()}")   # True
+print(f"{eliza.name} is adult: {eliza.is_adult()}")   # True
+print(f"{child.name} is adult: {child.is_adult()}")   # False
