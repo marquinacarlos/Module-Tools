@@ -1,3 +1,10 @@
+# Type checking with mypy
+# Bugs fixed:
+# 1. open_account was missing 'balances' argument
+# 2. Tobi had 9.13 (float) instead of int (pence)
+# 3. Olya had "£7.13" (string) instead of int (pence)
+# 4. format_pence_as_str was a typo, should be format_pence_as_string
+
 def open_account(balances: dict[str, int], name: str, amount: int) -> None:
     balances[name] = amount
 
