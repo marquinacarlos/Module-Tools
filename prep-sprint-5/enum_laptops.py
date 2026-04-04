@@ -1,3 +1,7 @@
+# Enums
+# Uses OperatingSystem enum to prevent typos and case issues
+# Accepts user input, validates it, and recommends laptops
+
 import sys
 from dataclasses import dataclass
 from enum import Enum
